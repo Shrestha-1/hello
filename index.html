@@ -1,479 +1,191 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
   <meta charset="UTF-8" />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>BoostMaster</title>
 
-  <link href=https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap rel="stylesheet">
-
-  <style>
-
-    body {
-
-      margin: 0;
-
-      font-family: 'Inter', sans-serif;
-
-      background-color: #f5f5f5;
-
-      color: #333;
-
-    }
-
-    header {
-
-      background-color: #1a2b4c;
-
-      color: white;
-
-      display: flex;
-
-      justify-content: space-between;
-
-      align-items: center;
-
-      padding: 1rem 2rem;
-
-      flex-wrap: wrap;
-
-    }
-
-    nav {
-
-      display: flex;
-
-      flex-wrap: wrap;
-
-    }
-
-    nav a {
-
-      color: white;
-
-      margin: 0 1rem;
-
-      text-decoration: none;
-
-      font-weight: 500;
-
-      transition: color 0.3s;
-
-    }
-
-    nav a:hover {
-
-      color: #ffcc00;
-
-    }
-
-    .cart {
-
-      font-size: 1rem;
-
-      background-color: #fff;
-
-      color: #1a2b4c;
-
-      padding: 0.3rem 0.6rem;
-
-      border-radius: 20px;
-
-    }
-
-    .hero {
-
-      position: relative;
-
-      text-align: center;
-
-      color: white;
-
-    }
-
-    .hero img {
-
-      width: 100%;
-
-      max-height: 400px;
-
-      object-fit: cover;
-
-    }
-
-    .hero-text {
-
-      position: absolute;
-
-      top: 50%;
-
-      left: 50%;
-
-      transform: translate(-50%, -50%);
-
-    }
-
-    .hero-text h1 {
-
-      font-size: 2.5rem;
-
-      margin-bottom: 1rem;
-
-    }
-
-    .hero-text button {
-
-      padding: 0.8rem 1.5rem;
-
-      font-size: 1rem;
-
-      background-color: #1a2b4c;
-
-      color: white;
-
-      border: none;
-
-      border-radius: 5px;
-
-      cursor: pointer;
-
-      transition: background-color 0.3s;
-
-    }
-
-    .hero-text button:hover {
-
-      background-color: #ffcc00;
-
-      color: #1a2b4c;
-
-    }
-
-    .categories {
-
-      padding: 2rem;
-
-    }
-
-    .categories h2 {
-
-      text-align: center;
-
-      margin-bottom: 2rem;
-
-    }
-
-    .card-grid {
-
-      display: flex;
-
-      gap: 1.5rem;
-
-      flex-wrap: wrap;
-
-      justify-content: center;
-
-    }
-
-    .card {
-
-      background-color: white;
-
-      border-radius: 10px;
-
-      padding: 1rem;
-
-      width: 220px;
-
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-
-      text-align: center;
-
-      transition: transform 0.3s;
-
-    }
-
-    .card:hover {
-
-      transform: translateY(-5px);
-
-    }
-
-    .card img {
-
-      width: 100%;
-
-      height: 120px;
-
-      object-fit: cover;
-
-      border-radius: 8px;
-
-      margin-bottom: 1rem;
-
-    }
-
-    .card h3 {
-
-      margin: 0.5rem 0;
-
-    }
-
-    .card p {
-
-      font-size: 0.9rem;
-
-      color: #666;
-
-    }
-
-    .card button {
-
-      margin-top: 1rem;
-
-      padding: 0.5rem 1rem;
-
-      background-color: #1a2b4c;
-
-      color: white;
-
-      border: none;
-
-      border-radius: 5px;
-
-      cursor: pointer;
-
-      transition: background-color 0.3s;
-
-    }
-
-    .card button:hover {
-
-      background-color: #ffcc00;
-
-      color: #1a2b4c;
-
-    }
-
-    footer {
-
-      background-color: #1a2b4c;
-
-      color: white;
-
-      text-align: center;
-
-      padding: 1rem;
-
-      margin-top: 2rem;
-
-    }
-
-    footer .socials {
-
-      margin-bottom: 0.5rem;
-
-    }
-
-    footer .socials a {
-
-      margin: 0 0.5rem;
-
-      color: white;
-
-      text-decoration: none;
-
-      transition: color 0.3s;
-
-    }
-
-    footer .socials a:hover {
-
-      color: #ffcc00;
-
-    }
-
- 
-
-    @media (max-width: 600px) {
-
-      .card-grid {
-
-        flex-direction: column;
-
-        align-items: center;
-
-      }
-
-      .hero-text h1 {
-
-        font-size: 1.8rem;
-
-      }
-
-    }
-
-  </style>
-
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Caladea&display=swap" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="index.css" />
 </head>
-
 <body>
-
- 
-
+  <!-- Header -->
   <header>
+    <div class="left-group">
+      <i
+        class="fas fa-bars"
+        id="hamburgerMenu"
+        title="Menu"
+        role="button"
+        tabindex="0"
+        aria-label="Open menu"
+        aria-expanded="false"
+      ></i>
+      <div class="logo">
+        <img src="https://uploads.onecompiler.io/43ewsfthh/43rpaarws/1000011864.png" alt="BoostMaster Logo" />
+        BoostMaster
+      </div>
+    </div>
 
-    <div><strong>BOOSTMASTER</strong></div>
+    <!-- Main Navigation Bar (visible on desktop) -->
+    <nav class="main-nav">
+    <a href="index.html" class="active">Home</a>
+<a href="Top.html" id="topupLink">Top-Up</a>
+<a href="wallet.html" id="walletLink">Wallet</a>
+<a href="offers.html" id="offersLink">Offers</a>
+<a href="support.html" id="supportLink">Support</a>
+<a href="contact.html" id="contactLink">Contact</a>
 
-    <nav>
-
-      <a href="#">Games</a>
-
-      <a href="#">Top-Up</a>
-
-      <a href="#">Wallet</a>
-
-      <a href="#">Offers</a>
-
-      <a href="#">Support</a>
-
-      <a href="#">Contact</a>
-
+      <div class="dropdown">
+        <div id="moreToggle" class="dropdown-toggle" tabindex="0" role="button" aria-haspopup="true" aria-expanded="false">
+          More <i class="fas fa-caret-down"></i>
+        </div>
+        <div class="dropdown-content" id="moreMenu" aria-hidden="true">
+          <a href="#">Settings</a>
+          <a href="profile.html">Profile</a>
+        </div>
+      </div>
     </nav>
-
-    <div class="cart">🛒 <span>0</span></div>
-
+    <div class="right-icons">
+      <div class="search-container">
+        <i
+          class="fas fa-search"
+          id="searchToggle"
+          title="Search"
+          role="button"
+          tabindex="0"
+          aria-label="Toggle search"
+          aria-expanded="false"
+          aria-controls="searchInput"
+        ></i>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search..."
+          aria-label="Search input"
+          aria-hidden="true"
+        />
+      </div>
+      <i
+        class="fas fa-share-alt"
+        id="shareIcon"
+        title="Share"
+        role="button"
+        tabindex="0"
+        aria-label="Open share options"
+        aria-expanded="false"
+        aria-controls="shareOverlay"
+      ></i>
+      <i
+        class="fas fa-shopping-cart"
+        id="cartIcon"
+        title="Cart"
+        role="button"
+        tabindex="0"
+        aria-label="Open shopping cart"
+        aria-expanded="false"
+        aria-controls="cartOverlay"
+      ></i>
+  <i
+  class="fas fa-user-circle"
+  title="Account"
+  role="button"
+  tabindex="0"
+  aria-label="User account"
+  id="accountIcon"
+></i>
+    </div>
   </header>
+<!-- Banner Section -->
+ <section class="banner">
+</section>
 
- 
-
-  <section class="hero">
-
-    <img src=https://assets-global.website-files.com/618d852d383de946ce0e3fa5/6495da7241185414c12ddc02_videoGamePlanet.PNG alt="Hero Banner">
-
-    <div class="hero-text">
-
-      <h1>Level Up Your Digital Life</h1>
-
-      <button>Explore Now</button>
-
+<!-- Hot Categories Section -->
+<section class="hot-categories">
+  <h2>HOT CATEGORIES</h2>
+  <hr />
+  <div class="product-grid">
+    <div class="product">
+      <a href="roblox.html">
+        <img src="https://uploads.onecompiler.io/43ewsfthh/43rpaarws/885751.jpg" alt="Roblox" />
+        <div class="product-name-overlay">Roblox</div>
+      </a>
     </div>
+  </div>
+</section>
 
-  </section>
-
- 
-
-  <section class="categories">
-
-    <h2>Hot Categories</h2>
-
-    <div class="card-grid">
-
-      <div class="card">
-
-        <img src=https://tse4.mm.bing.net/th/id/OIP.jK-5KtfKdxpdYLfWmeM20AHaE8?rs=1&pid=ImgDetMain&o=7&rm=3 alt="Mobile Top-Ups">
-
-        <h3>Mobile Top-Ups</h3>
-
-        <p>Recharge your mobile balance</p>
-
-        <button>Add to Cart</button>
-
-      </div>
-
-      <div class="card">
-
-        <img src=https://tse4.mm.bing.net/th/id/OIP.jK-5KtfKdxpdYLfWmeM20AHaE8?rs=1&pid=ImgDetMain&o=7&rm=3 alt="Game Credits">
-
-        <h3>Game Credits</h3>
-
-        <p>Buy credits for your favorite games</p>
-
-        <button>Add to Cart</button>
-
-      </div>
-
-      <div class="card">
-
-        <img src=https://tse4.mm.bing.net/th/id/OIP.jK-5KtfKdxpdYLfWmeM20AHaE8?rs=1&pid=ImgDetMain&o=7&rm=3 alt="Gift Cards">
-
-        <h3>Gift Cards</h3>
-
-        <p>Shop for popular gift cards</p>
-
-        <button>Add to Cart</button>
-
-      </div>
-
-      <div class="card">
-
-        <img src=https://tse4.mm.bing.net/th/id/OIP.jK-5KtfKdxpdYLfWmeM20AHaE8?rs=1&pid=ImgDetMain&o=7&rm=3 alt="Streaming Services">
-
-        <h3>Streaming Services</h3>
-
-        <p>Subscribe to top streaming platforms</p>
-
-        <button>Add to Cart</button>
-
-      </div>
-
+<section class="hot-categories">
+  <h2>NEW ARRIVALS</h2>
+  <hr />
+  <div class="product-grid">
+    <div class="product">
+      <a href="roblox.html">
+      <img src="https://uploads.onecompiler.io/43ewsfthh/43rpaarws/885751.jpg" alt="Roblox" />
+      <div class="product-name-overlay">Roblox</div>
+      </a>
     </div>
-
-  </section>
-
- 
-
-  <footer>
-
-    <div class="socials">
-
-      <a href="#">Facebook</a> |
-
-      <a href="#">Twitter</a> |
-
-      <a href="#">Instagram</a>
-
+  </div>
+</section>
+<section class="hot-categories">
+  <h2>COMING SOON</h2>
+  <hr />
+  <div class="product-grid">
+    <div class="product">
+    <img src="https://uploads.onecompiler.io/43ewsfthh/43rpaarws/Free2.png" alt="FreeFire" />
+    <div class="product-name-overlay">FreeFire</div>
+  </div>
+  <div class="product">
+    <img src="https://uploads.onecompiler.io/43ewsfthh/43rpaarws/Free3.png" alt="Pubg" />
+    <div class="product-name-overlay">Pubg</div>
+  </div>
+   </div>
+</section>
+  <!-- Share Overlay -->
+  <div
+    id="shareOverlay"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Share options"
+    tabindex="-1"
+    aria-hidden="true"
+  >
+    <div class="close-btn" id="closeShare" tabindex="0" role="button" aria-label="Close share overlay">&times;</div>
+    <h2>BoostMaster</h2>
+    <p>Follow us on social media or share our website!</p>
+    <div class="social-icons">
+      <a href="#" tabindex="0" aria-label="Facebook"><i class="fab fa-facebook-square"></i></a>
+      <a href="https://www.instagram.com/boostmaster.shop/" tabindex="0" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" tabindex="0" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" tabindex="0" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="#" tabindex="0" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
     </div>
+  </div>
 
-    <div>© 2024 BoostMaster</div>
+  <!-- Cart Overlay -->
+<div id="cartOverlay" role="dialog" aria-modal="true" aria-label="Shopping cart" tabindex="-1" aria-hidden="true">
+  <div class="cart-header">
+    <h2>Cart</h2>
+    <div class="close-btn" id="closeCart" tabindex="0" role="button" aria-label="Close cart">&times;</div>
+  </div>
 
-  </footer>
+  <div class="cart-items" aria-live="polite" aria-relevant="additions removals" tabindex="0">
+    <p class="empty-msg">Your cart is empty. Add items to buy!</p>
+    <!-- Cart items will appear here dynamically -->
+  </div>
 
- 
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span>Total:</span>
+      <span id="cartTotal">$0.00</span>
+    </div>
+    <button id="checkoutBtn" tabindex="0">Checkout</button>
+  </div>
+</div>
 
-  <script>
-
-    let cartCount = 0;
-
-    const cartDisplay = document.querySelector('.cart span');
-
-    const buttons = document.querySelectorAll('.card button');
-
- 
-
-    buttons.forEach(button => {
-
-      button.addEventListener('click', () => {
-
-        cartCount++;
-
-        cartDisplay.textContent = cartCount;
-
-      });
-
-    });
-
-  </script>
-
- 
+<script src="index.js"></script>
 
 </body>
-
 </html>
-
-

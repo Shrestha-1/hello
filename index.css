@@ -562,3 +562,34 @@ nav.main-nav a.active::after {
     padding: 8px 12
   }
 }
+/* Right icons */
+.right-icons i {
+  margin-left: 20px;
+  font-size: 1.7rem;
+  cursor: pointer;
+  transition: color 0.2s ease, font-size 0.2s ease;
+}
+
+/* Smaller icons on tablets & phones */
+@media (max-width: 768px) {
+  .right-icons i {
+    font-size: 1.4rem;
+    margin-left: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .right-icons i {
+    font-size: 1.2rem;
+    margin-left: 10px;
+  }
+
+  .logo img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+}

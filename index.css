@@ -9,7 +9,6 @@ body {
 body.no-scroll {
   overflow: hidden;
 }
-
 /* ==================== Header ==================== */
 header {
   position: fixed;
@@ -31,6 +30,13 @@ header.scrolled {
   backdrop-filter: blur(6px);
 }
 
+/* Left group (hamburger + logo) */
+.left-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -41,9 +47,10 @@ header.scrolled {
 .logo img {
   width: 36px;
   height: 36px;
-  margin-right: 10px;
+  margin-right: 8px;
 }
 
+/* Right icons */
 .right-icons {
   display: flex;
   align-items: center;
@@ -60,23 +67,107 @@ header.scrolled {
   color: #3b82f6;
 }
 
-/* ==================== Hamburger & Mobile Nav ==================== */
+/* Hamburger Menu */
 #hamburgerMenu {
   font-size: 1.8rem;
-  margin-right: 15px;
-  display: none;
+  display: none; /* hidden on desktop */
   cursor: pointer;
 }
 
+/* Main Nav (desktop) */
+nav.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+nav.main-nav a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+nav.main-nav a:hover {
+  color: #3b82f6;
+}
+
+nav.main-nav a.active {
+  color: #3b82f6;
+}
+
+nav.main-nav a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #3b82f6;
+  border-radius: 2px;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.dropdown-content {
+  display: none;
+  opacity: 0;
+  position: absolute;
+  background-color: #1a1a1a;
+  min-width: 140px;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.dropdown-content.show {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 10px 15px;
+  display: block;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: background 0.2s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #2563eb;
+}
+
+/* ==================== Mobile ==================== */
 @media (max-width: 615px) {
   #hamburgerMenu {
-    display: block;
+    display: block; /* show hamburger */
   }
 
-  header nav.main-nav {
-    display: none;
+  nav.main-nav {
+    display: none; /* hide nav by default */
     position: absolute;
-    top: 65px;
+    top: 100%;
     left: 0;
     width: 100%;
     background-color: #000;
@@ -85,19 +176,20 @@ header.scrolled {
     z-index: 2000;
   }
 
-  header nav.main-nav.mobile-active {
-    display: flex;
+  nav.main-nav.mobile-active {
+    display: flex; /* show when active */
   }
 
-  header nav.main-nav a {
+  nav.main-nav a {
     padding: 12px 25px;
     border-top: 1px solid #222;
   }
 
-  header nav.main-nav .dropdown {
-    display: none !important;
+  nav.main-nav .dropdown {
+    display: none !important; /* hide dropdown on mobile */
   }
 }
+
 
 /* ==================== Main Nav Links ==================== */
 header nav.main-nav a {
@@ -305,11 +397,9 @@ nav.main-nav a.active::after {
 }
 
 /* Cart Footer */
-
-/* Cart Footer - stays inside overlay */
 .cart-footer {
   position: absolute;
-  bottom: 110px; /* space for checkout button */
+  bottom: 110px;
   left: 0;
   width: 100%;
   padding: 12px 20px;
@@ -320,12 +410,12 @@ nav.main-nav a.active::after {
   font-size: 1.1rem;
   font-weight: bold;
   box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
-  z-index: 10; /* inside cart */
+  z-index: 10;
 }
 
-/* Checkout Button - stays at bottom */
+/* Checkout Button */
 #checkoutBtn {
-  position: absolute;       /* relative to cart overlay */
+  position: absolute;
   bottom: -45px;
   left: 50%;
   transform: translateX(-50%);
@@ -350,7 +440,6 @@ nav.main-nav a.active::after {
   background: linear-gradient(135deg, #3b82f6, #2563eb);
   outline: none;
 }
-
 
 /* ==================== Banner ==================== */
 .banner {
@@ -470,6 +559,6 @@ nav.main-nav a.active::after {
 
   .product-name-overlay {
     font-size: 1.5rem;
-    padding: 8px 12px;
+    padding: 8px 12
   }
 }

@@ -9,183 +9,138 @@
   <link href="https://fonts.googleapis.com/css2?family=Caladea&display=swap" rel="stylesheet" />
   <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <!-- Styles -->
   <link rel="stylesheet" href="index.css" />
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="left-group">
-      <i
-        class="fas fa-bars"
-        id="hamburgerMenu"
-        title="Menu"
-        role="button"
-        tabindex="0"
-        aria-label="Open menu"
-        aria-expanded="false"
-      ></i>
-      <div class="logo">
-        <img src="https://uploads.onecompiler.io/43ewsfthh/43rpaarws/1000011864.png" alt="BoostMaster Logo" />
-        BoostMaster
-      </div>
+ <!-- Header -->
+<header>
+  <!-- Left Group: Hamburger + Logo -->
+  <div class="left-group">
+    <i class="fas fa-bars" id="hamburgerMenu" title="Menu"></i>
+    <div class="logo">
+      <img src="https://uploads.onecompiler.io/43ewsfthh/43rpaarws/1000011864.png" alt="BoostMaster Logo" />
+      BoostMaster
     </div>
+  </div>
 
-    <!-- Main Navigation Bar (visible on desktop) -->
-    <nav class="main-nav">
+  <!-- Main Navigation Bar -->
+  <nav class="main-nav">
     <a href="index.html" class="active">Home</a>
-<a href="Top.html" id="topupLink">Top-Up</a>
-<a href="wallet.html" id="walletLink">Wallet</a>
-<a href="offers.html" id="offersLink">Offers</a>
-<a href="support.html" id="supportLink">Support</a>
-<a href="contact.html" id="contactLink">Contact</a>
+    <a href="Top.html" id="topupLink">Top-Up</a>
+    <a href="wallet.html" id="walletLink">Wallet</a>
+    <a href="offers.html" id="offersLink">Offers</a>
+    <a href="support.html" id="supportLink">Support</a>
+    <a href="contact.html" id="contactLink">Contact</a>
 
-      <div class="dropdown">
-        <div id="moreToggle" class="dropdown-toggle" tabindex="0" role="button" aria-haspopup="true" aria-expanded="false">
-          More <i class="fas fa-caret-down"></i>
-        </div>
-        <div class="dropdown-content" id="moreMenu" aria-hidden="true">
-          <a href="#">Settings</a>
-          <a href="profile.html">Profile</a>
-        </div>
+    <div class="dropdown">
+      <button id="moreToggle" class="dropdown-toggle">
+        More <i class="fas fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content" id="moreMenu">
+        <a href="#">Settings</a>
+        <a href="profile.html">Profile</a>
       </div>
-    </nav>
-    <div class="right-icons">
-      <div class="search-container">
-        <i
-          class="fas fa-search"
-          id="searchToggle"
-          title="Search"
-          role="button"
-          tabindex="0"
-          aria-label="Toggle search"
-          aria-expanded="false"
-          aria-controls="searchInput"
-        ></i>
-        <input
-          type="text"
-          id="searchInput"
-          placeholder="Search..."
-          aria-label="Search input"
-          aria-hidden="true"
-        />
+    </div>
+  </nav>
+
+  <!-- Right Icons -->
+  <div class="right-icons">
+    <div class="search-container">
+      <i class="fas fa-search" id="searchToggle"></i>
+      <input type="text" id="searchInput" placeholder="Search..." />
+    </div>
+    <i class="fas fa-share-alt" id="shareIcon"></i>
+    <i class="fas fa-shopping-cart" id="cartIcon"></i>
+    <i class="fas fa-user-circle" id="accountIcon"></i>
+  </div>
+</header>
+
+  <!-- Banner -->
+  <section class="banner"></section>
+
+  <!-- Hot Categories -->
+  <section class="hot-categories">
+    <h2>HOT CATEGORIES</h2>
+    <hr />
+    <div class="product-grid">
+      <div class="product">
+        <a href="roblox.html">
+          <img src="https://uploads.onecompiler.io/43ewsfthh/43rpaarws/885751.jpg" alt="Roblox" />
+          <div class="product-name-overlay">Roblox</div>
+        </a>
       </div>
-      <i
-        class="fas fa-share-alt"
-        id="shareIcon"
-        title="Share"
-        role="button"
-        tabindex="0"
-        aria-label="Open share options"
-        aria-expanded="false"
-        aria-controls="shareOverlay"
-      ></i>
-      <i
-        class="fas fa-shopping-cart"
-        id="cartIcon"
-        title="Cart"
-        role="button"
-        tabindex="0"
-        aria-label="Open shopping cart"
-        aria-expanded="false"
-        aria-controls="cartOverlay"
-      ></i>
-  <i
-  class="fas fa-user-circle"
-  title="Account"
-  role="button"
-  tabindex="0"
-  aria-label="User account"
-  id="accountIcon"
-></i>
     </div>
-  </header>
-<!-- Banner Section -->
- <section class="banner">
-</section>
+  </section>
 
-<!-- Hot Categories Section -->
-<section class="hot-categories">
-  <h2>HOT CATEGORIES</h2>
-  <hr />
-  <div class="product-grid">
-    <div class="product">
-      <a href="roblox.html">
-        <img src="https://uploads.onecompiler.io/43ewsfthh/43rpaarws/885751.jpg" alt="Roblox" />
-        <div class="product-name-overlay">Roblox</div>
-      </a>
+  <!-- New Arrivals -->
+  <section class="hot-categories">
+    <h2>NEW ARRIVALS</h2>
+    <hr />
+    <div class="product-grid">
+      <div class="product">
+        <a href="roblox.html">
+          <img src="https://uploads.onecompiler.io/43ewsfthh/43rpaarws/885751.jpg" alt="Roblox" />
+          <div class="product-name-overlay">Roblox</div>
+        </a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="hot-categories">
-  <h2>NEW ARRIVALS</h2>
-  <hr />
-  <div class="product-grid">
-    <div class="product">
-      <a href="roblox.html">
-      <img src="https://uploads.onecompiler.io/43ewsfthh/43rpaarws/885751.jpg" alt="Roblox" />
-      <div class="product-name-overlay">Roblox</div>
-      </a>
+  <!-- Coming Soon -->
+  <section class="hot-categories">
+    <h2>COMING SOON</h2>
+    <hr />
+    <div class="product-grid">
+      <div class="product">
+        <img src="https://uploads.onecompiler.io/43ewsfthh/43rpaarws/Free2.png" alt="FreeFire" />
+        <div class="product-name-overlay">FreeFire</div>
+      </div>
+      <div class="product">
+        <img src="https://uploads.onecompiler.io/43ewsfthh/43rpaarws/Free3.png" alt="Pubg" />
+        <div class="product-name-overlay">Pubg</div>
+      </div>
     </div>
-  </div>
-</section>
-<section class="hot-categories">
-  <h2>COMING SOON</h2>
-  <hr />
-  <div class="product-grid">
-    <div class="product">
-    <img src="https://uploads.onecompiler.io/43ewsfthh/43rpaarws/Free2.png" alt="FreeFire" />
-    <div class="product-name-overlay">FreeFire</div>
-  </div>
-  <div class="product">
-    <img src="https://uploads.onecompiler.io/43ewsfthh/43rpaarws/Free3.png" alt="Pubg" />
-    <div class="product-name-overlay">Pubg</div>
-  </div>
-   </div>
-</section>
+  </section>
+
   <!-- Share Overlay -->
-  <div
-    id="shareOverlay"
-    role="dialog"
-    aria-modal="true"
-    aria-label="Share options"
-    tabindex="-1"
-    aria-hidden="true"
-  >
-    <div class="close-btn" id="closeShare" tabindex="0" role="button" aria-label="Close share overlay">&times;</div>
+  <div id="shareOverlay">
+    <div class="close-btn" id="closeShare">&times;</div>
     <h2>BoostMaster</h2>
     <p>Follow us on social media or share our website!</p>
     <div class="social-icons">
-      <a href="#" tabindex="0" aria-label="Facebook"><i class="fab fa-facebook-square"></i></a>
-      <a href="https://www.instagram.com/boostmaster.shop/" tabindex="0" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="#" tabindex="0" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-      <a href="#" tabindex="0" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-      <a href="#" tabindex="0" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+      <a href="#"><i class="fab fa-facebook-square"></i></a>
+      <a href="https://www.instagram.com/boostmaster.shop/"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+      <a href="#"><i class="fab fa-telegram"></i></a>
     </div>
   </div>
+
+  <!-- Cart Background -->
+  <div id="cartBackground"></div>
 
   <!-- Cart Overlay -->
-<div id="cartOverlay" role="dialog" aria-modal="true" aria-label="Shopping cart" tabindex="-1" aria-hidden="true">
-  <div class="cart-header">
-    <h2>Cart</h2>
-    <div class="close-btn" id="closeCart" tabindex="0" role="button" aria-label="Close cart">&times;</div>
-  </div>
-
-  <div class="cart-items" aria-live="polite" aria-relevant="additions removals" tabindex="0">
-    <p class="empty-msg">Your cart is empty. Add items to buy!</p>
-    <!-- Cart items will appear here dynamically -->
-  </div>
-
-  <div class="cart-footer">
-    <div class="cart-total">
-      <span>Total:</span>
-      <span id="cartTotal">$0.00</span>
+  <div id="cartOverlay">
+    <div class="cart-header">
+      <h2>Cart</h2>
+      <div class="close-btn" id="closeCart">&times;</div>
     </div>
-    <button id="checkoutBtn" tabindex="0">Checkout</button>
+
+    <div class="cart-items">
+      <p class="empty-msg">Your cart is empty. Add items to buy!</p>
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="cartTotal">$0.00</span>
+      </div>
+      <button id="checkoutBtn">Checkout</button>
+    </div>
   </div>
-</div>
 
-<script src="index.js"></script>
-
+  <!-- JS -->
+  <script src="index.js"></script>
 </body>
 </html>

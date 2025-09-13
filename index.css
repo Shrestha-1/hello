@@ -530,18 +530,17 @@ nav.main-nav a.active::after {
   }
 }
 
-/* Small Screens: 1 per row */
-@media (max-width: 480px) {
-  .product {
-    flex: 0 0 100%;
-    max-width: 100%;
+@media (max-width: 400px) {
+  .product-grid {
+    padding: 10px;  /* reduce padding for small screens */
+    gap: 10px;      /* smaller gap to fit two items */
   }
-
-  .product-name-overlay {
-    font-size: 1.2rem;
-    padding: 8px 12px;
+  .product {
+    flex: 0 0 calc(50% - 10px); /* width minus half the gap */
+    max-width: calc(50% - 10px);
   }
 }
+
 
 /* ==================== Dropdown ==================== */
 .dropdown {
